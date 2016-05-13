@@ -23,9 +23,9 @@ trait RequestArrayTrait
      */
     public function getRequestData($sent = true)
     {
-        if($sent && isset($this->request)){
+        if($sent && $request = $this->getRequest()){
             $query = [];
-            parse_str($this->request->getUri()->getQuery(), $query);
+            parse_str($request->getUri()->getQuery(), $query);
             return $query;
         }
 

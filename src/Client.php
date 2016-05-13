@@ -82,7 +82,8 @@ class Client
         $this->options = $options;
 
         $this->setFactory(new MapFactory([
-            'message' => 'Nexmo\Message\Client'
+            'message' => 'Nexmo\Message\Client',
+            'application' => 'Nexmo\Account\Application\Client'
         ], $this));
     }
 
